@@ -52,6 +52,10 @@ async def on_ready():
     await channel.send(login)
 
 # メッセージ受信時に動作する処理
+# asyncは非同期処理を行うためのメソッド？
+# 恐らく、asyncは複数回コマンドが打たれたときに、並列に処理できるとか？そのため、複数回コマンドを打っても、処理に時間がかかりにくい
+# asyncがないと、それぞれのコマンドを1回ずつ呼んで動かすことになり、処理が遅くなる？
+#async-awaitはセット、片方がないとエラーを吐く？
 @client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
